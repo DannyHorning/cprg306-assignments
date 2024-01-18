@@ -1,7 +1,13 @@
+import Link from 'next/link';
+
 export default function StudentInfo() {
+
   return (
-    <main>
-      <h1>Student Info</h1>
-    </main>
+    <div>
+    <ul>
+      <li>Danny Horning</li>
+      <li><Link href="https://github.com/DannyHorning/cprg306-assignments">Github Link</Link></li>
+    </ul>
+    </div>
   );
 }
