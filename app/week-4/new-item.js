@@ -18,26 +18,28 @@ export default function NewItem(){
         alert(`Shopping list item added. Name:${name}, Quantity: ${quantity}, Category: ${category}`);
     }
     return (
-        <div>
-        <form onSubmit={handleSubmit}>
-          <label>
+        <div className="text-slate-200 m-4">
+        <form onSubmit={handleSubmit} className="flex flex-col">
+          <label className='mb-2'>
             Name:
             <input type="text" value={name} onChange={(event) => setName(event.target.value)} 
-            required/>
+            required
+            className="text-slate-200 p-1 rounded-md bg-slate-700 ml-1"/>
           </label>
-          <label>
+          <label className='mb-2'>
             Quantity:
             <input type="number" value={quantity} onChange={(event) => setQuantity(Number(event.target.value))} 
             min = "1"
             max = "99"
             required
+            className="text-slate-200 p-1 rounded-md bg-slate-700 ml-1"
             />
           </label>
-          <br />
-          <label>
+          <label className='mb-2'>
             Category:
             <select value={category} onChange={(event) => setCategory(event.target.value)} 
             required
+            className="text-slate-200 p-1 rounded-md bg-slate-700 ml-1"
             >
                 <option value="Produce">Produce</option>
                 <option value="Dairy">Dairy</option>
@@ -53,7 +55,7 @@ export default function NewItem(){
             </select>
           </label>
           <br />
-          <button type="submit">Submit</button>
+          <button type="submit" className='m-2 bg-slate-700 p-1 rounded-md hover:bg-blue-300 active:bg-slate-800'>Submit</button>
         </form>
         </div>
       );
