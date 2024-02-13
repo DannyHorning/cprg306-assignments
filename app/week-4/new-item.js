@@ -54,8 +54,8 @@ export default function NewItem(){
                 <option value="Other">Other</option>
             </select>
           </label>
-          <br />
-          <button type="submit" className='m-2 bg-slate-700 p-1 rounded-md hover:bg-blue-300 active:bg-slate-800'>Submit</button>
+          <button type="submit" className='m-4 bg-slate-700 p-1 rounded-md hover:bg-blue-300 active:bg-slate-800'>Submit</button>
+          
         </form>
         </div>
       );
