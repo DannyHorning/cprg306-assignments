@@ -25,7 +25,7 @@ export default function NewItem({onAddItem}){
         onAddItem(newItem);
     }
     return (
-        <div className="text-slate-200 m-4 bg-slate-900 p-4 rounded-md">
+        <div className="flex flex-col items-center text-slate-200 m-4 bg-slate-900 p-4 rounded-md">
         <h2 className="text-2xl font-bold text-slate-200">Add New Item</h2>
         <form onSubmit={handleSubmit} className="flex flex-col items-center">
           <label className='mb-2 text-slate-200'>

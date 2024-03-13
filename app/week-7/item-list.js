@@ -31,7 +31,7 @@ export default function ItemList({items, onItemSelect}) {
     <button onClick={handleSortBy('category')} value="category" className='bg-slate-900 p-1 rounded-md m-1 hover:bg-blue-300 active:bg-slate-800 text-slate-200'>Sort by Category</button>
     <div className=' text-slate-200'>
       {sortedItems.map((item, index) => (
-        <Item key={index} name={item.name} quantity={item.quantity} category={item.category} onSelect={onItemSelect(item)}/>
+        <Item key={index} name={item.name} quantity={item.quantity} category={item.category} onSelect= {() => onItemSelect(item)}/>
       ))}
       </div>
 </div>
