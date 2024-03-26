@@ -16,13 +16,16 @@ export default function ItemList({items, onItemSelect}) {
         }}
 
     const sortedItems = [...items].sort((a, b) => {
+    try{
     if (sortBy === 'name') {
       return a.name.localeCompare(b.name);
     } else if (sortBy === 'category') {
       return a.category.localeCompare(b.category);
     }
-    return 0;
-  });
+    return 0;}
+    catch (error) {
+      console.error('Error sorting items:', error);
+    }});
 
   
   return (

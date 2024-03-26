@@ -15,6 +15,10 @@ export default function Page() {
 
     const loadItems = async () => {
         try {
+            if (!user || !user.uid) {
+                console.error("User not authenticated or missing UID.");
+                return;
+            }
             const items = await getItems(user.uid);
             setItems(items);
         } catch (error) {
@@ -31,11 +35,11 @@ export default function Page() {
         setSelectedItemName(noEmojis.toLowerCase().split(',')[0].trim());
     }
 
-    const handleAddItem = async (name) => {
+    const handleAddItem = async (newItem) => {
         try {
-            const newItemId = await addItem(user.uid, { name });
-            const newItem = { id: newItemId, name };
-            setItems(prevItems => [...prevItems, newItem]);
+            const newItemId = await addItem(user.uid, newItem );
+            const newItemWithID = { id: newItemId, ...newItem };
+            setItems(prevItems => Array.isArray(prevItems) ? [...prevItems, newItemWithID]: []);
         } catch (error) {
             console.error("Error adding item:", error);
         }
