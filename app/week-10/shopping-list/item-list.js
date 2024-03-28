@@ -6,6 +6,7 @@ import Item from './item.js';
 
 export default function ItemList({items, onItemSelect}) {
   const [sortBy, setSortBy] = useState('name');
+  console.log(items);
 
   function handleSortBy(type) {
     if (type === 'name') {

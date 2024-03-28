@@ -22,7 +22,7 @@ export default function NewItem({onAddItem}){
             category: category
           };
           
-        onAddItem(newItem);
+        onAddItem(id, newItem);
     }
     return (
         <div className="flex flex-col items-center text-slate-200 m-4 bg-slate-900 p-4 rounded-md">
